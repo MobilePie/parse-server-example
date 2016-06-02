@@ -6,9 +6,9 @@ var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
 var SimpleMailgunAdapter = require('parse-server/lib/Adapters/Email/SimpleMailgunAdapter');
 var simpleMailgunAdapter = new SimpleMailgunAdapter({
-apiKey: process.env.MAILGUN_KEY || '',
-domain: process.env.DOMAIN || '',
-fromAddress: process.env.MAILGUN_FROM_ADDRESS || ''
+apiKey: process.env.MAILGUN_KEY || 'key-0e17afb6706237c8dcfa11434698383d',
+domain: process.env.DOMAIN || 'app51c87c84b4c34b27a02cf8aa0581ba54.mailgun.org',
+fromAddress: process.env.MAILGUN_FROM_ADDRESS || 'tom@mobilepie.com'
 });
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
