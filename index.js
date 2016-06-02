@@ -26,8 +26,6 @@ var api = new ParseServer({
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   },
-  publicServerURL: process.env.PUBLIC_SERVER_URL || 'http://localhost:1337/parse',
-  appName: process.env.APP_NAME || 'Mayfly Sounds',
   emailAdapter: simpleMailgunAdapter
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
