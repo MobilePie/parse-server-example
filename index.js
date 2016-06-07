@@ -4,8 +4,6 @@
 var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
-//var SimpleMailgunAdapter = require('parse-server/lib/Adapters/Email/SimpleMailgunAdapter');
-
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
 if (!databaseUri) {
@@ -13,6 +11,7 @@ if (!databaseUri) {
 }
 
 var api = new ParseServer({
+  verifyUserEmails: true,
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'myAppId',
@@ -26,7 +25,7 @@ var api = new ParseServer({
   emailAdapter: {
     module: 'parse-server-simple-mailgun-adapter',
     options: {
-      fromAddress: 'EMAIL@DOMAIN2',
+      fromAddress: 'support@app51c87c84b4c34b27a02cf8aa0581ba54.mailgun.org',
       domain: 'app51c87c84b4c34b27a02cf8aa0581ba54.mailgun.org',
       apiKey: 'key-0e17afb6706237c8dcfa11434698383d'
     }
