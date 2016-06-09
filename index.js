@@ -15,18 +15,18 @@ var api = new ParseServer({
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'myAppId',
   masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
-  serverURL: process.env.SERVER_URL || 'https://mayfly-test.herokuapp.com//parse',  // Don't forget to change to https if needed
+  serverURL: process.env.SERVER_URL || 'https://mayfly-sound.herokuapp.com//parse',  // Don't forget to change to https if needed
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   },
-  publicServerURL: process.env.PUBLIC_SERVER_URL || 'https://mayfly-test.herokuapp.com/parse',
+  publicServerURL: process.env.PUBLIC_SERVER_URL || 'https://mayfly-sound.herokuapp.com/parse',
   appName: process.env.APP_NAME || 'Mayfly Sound',
   emailAdapter: {
     module: 'parse-server-simple-mailgun-adapter',
     options: {
       fromAddress: 'no_reply@mayflysound.com',
-      domain: 'app51c87c84b4c34b27a02cf8aa0581ba54.mailgun.org',
-      apiKey: 'key-0e17afb6706237c8dcfa11434698383d'
+      domain: 'app835639aa13684cccaed88ae6dc215e50.mailgun.org', //app51c87c84b4c34b27a02cf8aa0581ba54.mailgun.org
+      apiKey: 'key-76431f91356f39716b53f8ad7cafeba2'//key-0e17afb6706237c8dcfa11434698383d
     }
   }
 });
