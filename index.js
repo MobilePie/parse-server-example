@@ -15,7 +15,7 @@ var api = new ParseServer({
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'myAppId',
   masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
-  serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
+  serverURL: process.env.SERVER_URL || 'http://media.mobilepie.com/parse',  // Don't forget to change to https if needed
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   },
@@ -24,10 +24,13 @@ var api = new ParseServer({
   emailAdapter: {
     module: 'parse-server-simple-mailgun-adapter',
     options: {
-      fromAddress: 'support@app51c87c84b4c34b27a02cf8aa0581ba54.mailgun.org',//no_reply@mayflysound.com
+      fromAddress: 'no_reply@mayflysound.com',
       domain: 'app51c87c84b4c34b27a02cf8aa0581ba54.mailgun.org',
       apiKey: 'key-0e17afb6706237c8dcfa11434698383d'
     }
+  },
+  customPages: {
+    choosePassword: 'http://media.mobilepie.com/mayflysound/parse/apps/mayfly-sound/choose_password.html',
   }
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
