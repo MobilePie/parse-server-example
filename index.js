@@ -11,7 +11,6 @@ if (!databaseUri) {
 }
 
 var api = new ParseServer({
-  verifyUserEmails: true,
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'myAppId',
@@ -20,12 +19,12 @@ var api = new ParseServer({
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   },
-  publicServerURL: process.env.PUBLIC_SERVER_URL || 'http://localhost:1337/parse',
-  appName: process.env.APP_NAME || 'Mayfly Sounds',
+  publicServerURL: process.env.PUBLIC_SERVER_URL || 'http://media.mobilepie.com/parse',
+  appName: process.env.APP_NAME || 'Mayfly Sound',
   emailAdapter: {
     module: 'parse-server-simple-mailgun-adapter',
     options: {
-      fromAddress: 'support@app51c87c84b4c34b27a02cf8aa0581ba54.mailgun.org',
+      fromAddress: 'support@app51c87c84b4c34b27a02cf8aa0581ba54.mailgun.org',//no_reply@mayflysound.com
       domain: 'app51c87c84b4c34b27a02cf8aa0581ba54.mailgun.org',
       apiKey: 'key-0e17afb6706237c8dcfa11434698383d'
     }
