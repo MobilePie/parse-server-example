@@ -25,8 +25,8 @@ var api = new ParseServer({
     module: 'parse-server-simple-mailgun-adapter',
     options: {
       fromAddress: 'no_reply@mayflysound.com',
-      domain: 'app835639aa13684cccaed88ae6dc215e50.mailgun.org', //app51c87c84b4c34b27a02cf8aa0581ba54.mailgun.org
-      apiKey: 'key-76431f91356f39716b53f8ad7cafeba2'//key-0e17afb6706237c8dcfa11434698383d
+      domain: 'mayflymail.mobilepie.com',
+      apiKey: 'key-76431f91356f39716b53f8ad7cafeba2'
     }
   }
 });
